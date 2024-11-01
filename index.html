@@ -76,7 +76,7 @@
             display: block;
         }
 
-                /* Banner */
+        /* Banner */
         .banner {
             background: linear-gradient(to right, #66b2ff, #e6f7ff); /* Gradasi biru muda ke putih */
             color: #004C8C; /* Warna teks biru tua yang kontras */
@@ -84,38 +84,24 @@
             padding: 3rem;
         }
 
-
-        /* Galeri */
-        .gallery-images {
+        /* Galeri Beranda */
+        .home-gallery {
             display: flex;
             gap: 1rem;
             justify-content: center;
             margin-top: 1rem;
         }
 
-        .gallery-images img {
-            width: 200px;
+        .home-gallery img {
+            width: 100%;
+            max-width: 300px;
             height: auto;
-            border-radius: 5px;
+            border-radius: 10px;
             transition: transform 0.3s ease;
         }
 
-        .gallery-images img:hover {
+        .home-gallery img:hover {
             transform: scale(1.05);
-        }
-
-        /* Kepala Sekolah */
-        .headmaster {
-            display: flex;
-            align-items: center;
-            margin-top: 2rem;
-        }
-
-        .headmaster img {
-            width: 100px; /* Ukuran gambar kepala sekolah */
-            height: 100px; /* Ukuran gambar kepala sekolah */
-            border-radius: 50%; /* Membuat gambar menjadi bulat */
-            margin-right: 1rem;
         }
 
         /* Footer */
@@ -125,6 +111,16 @@
             text-align: center;
             padding: 1rem;
             margin-top: 2rem;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            margin-left: 0.5rem;
+        }
+
+        .footer-link:hover {
+            color: #66b2ff;
         }
     </style>
 </head>
@@ -157,77 +153,36 @@
         </div>
     </section>
 
-    <!-- Konten Halaman -->
+    <!-- Konten Halaman Beranda -->
     <section id="home" class="content active">
         <h2>Selamat Datang di SMP N 3 BANYURESMI</h2>
         <p>Di sini Anda akan menemukan informasi terbaru tentang sekolah kami dan kegiatan yang kami selenggarakan.</p>
+        
+        <!-- Galeri Gambar di Beranda -->
+        <div class="home-gallery">
+            <img src="beranda1.JPG" alt="Gambar Kegiatan 1"> <!-- Ganti dengan path gambar Anda -->
+            <img src="beranda2.PNG" alt="Gambar Kegiatan 2"> <!-- Ganti dengan path gambar Anda -->
+            <img src="beranda3.JPG" alt="Gambar Kegiatan 3"> <!-- Ganti dengan path gambar Anda -->
+        </div>
     </section>
 
     <section id="about" class="content">
         <h2>Profil Sekolah</h2>
         <p>SMP N 3 BANYURESMI adalah sekolah yang berdedikasi untuk mencetak generasi cerdas, berkarakter, dan kompeten.</p>
-        
-        <div class="headmaster">
-            <img src="kepala.JPG" alt="Kepala Sekolah Yeti Sumiati S.P.D"> <!-- Ganti dengan path gambar kepala sekolah Anda -->
-            <div>
-                <h3>Yeti Sumiati, S.P.D</h3>
-                <p>Kepala Sekolah</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="programs" class="content">
-        <h2>Program Akademik</h2>
-        <p>SMP N 3 BANYURESMI menawarkan berbagai program untuk mendukung perkembangan akademik siswa.</p>
-    </section>
-
-    <section id="extracurriculars" class="content">
-        <h2>Ekstrakurikuler</h2>
-        <ul>
-            <li>Basket</li>
-            <li>Volly</li>
-            <li>Paskibra</li>
-            <li>Futsal</li>
-        </ul>
-    </section>
-
-    <section id="gallery" class="content">
-        <h2>Galeri Kegiatan</h2>
-        <div class="gallery-images">
-            <img src="image1.JPG" alt="Kegiatan 1"> <!-- Ganti dengan path gambar kegiatan Anda -->
-            <img src="image2.JPG" alt="Kegiatan 2"> <!-- Ganti dengan path gambar kegiatan Anda -->
-            <img src="image3.JPG" alt="Kegiatan 3"> <!-- Ganti dengan path gambar kegiatan Anda -->
-        </div>
-    </section>
-
-    <section id="motivation" class="content">
-        <h2>Motivasi</h2>
-        <p>"Jadilah cahaya bagi dirimu sendiri dan orang lain. Setiap langkah kecil menuju tujuanmu adalah prestasi yang patut dirayakan."</p>
-    </section>
-
-    <section id="notBullying" class="content">
-        <h2>Not Bullying Sekolah Berprestasi</h2>
-        <p>SMP N 3 BANYURESMI berkomitmen untuk menciptakan lingkungan belajar yang aman dan nyaman bagi semua siswa. Kami melarang segala bentuk bullying dan menghargai keragaman di antara siswa. Mari kita bersama-sama menciptakan suasana yang positif dan saling menghargai.</p>
-    </section>
-
-    <section id="contact" class="content">
-        <h2>Kontak Kami</h2>
-        <p>Alamat: Jl. Cibuyutan Sukalaksana, Banyuresmi</p>
-        <p>Email: smpn3banyuresmi@gmail.com</p>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 SMP N 3 BANYURESMI. Semua Hak Cipta Dilindungi. By: TeamFasya</p>
+        <p>
+            <a href="https://www.instagram.com/smpn3banyuresmi" target="_blank" class="footer-link">Ikuti kami di Instagram</a>
+        </p>
     </footer>
 
     <script>
         function showPage(pageId) {
-            // Sembunyikan semua konten
             const contents = document.querySelectorAll('.content');
             contents.forEach(content => content.classList.remove('active'));
-
-            // Tampilkan konten yang dipilih
             document.getElementById(pageId).classList.add('active');
         }
     </script>

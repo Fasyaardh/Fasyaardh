@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMP N 3 BANYURESMI</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('bg.JPG') no-repeat center center fixed; /* Ganti dengan path gambar background yang baru */
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(0, 122, 204, 0.9); /* Biru Tua dengan transparansi */
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            margin-right: 0.5rem;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        /* Menu Navigasi */
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            padding: 0.5rem 1rem;
+            border: 2px solid white;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: #007ACC;
+            border-color: #007ACC; /* Ubah warna border saat hover */
+        }
+
+        /* Konten Halaman */
+        .content {
+            padding: 2rem;
+            display: none;
+            background-color: rgba(255, 255, 255, 0.8); /* Putih dengan transparansi */
+            border-radius: 10px;
+            margin: 2rem;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        /* Banner */
+        .banner {
+            background: linear-gradient(to right, rgba(102, 178, 255, 0.8), rgba(230, 247, 255, 0.8));
+            color: #004C8C;
+            text-align: center;
+            padding: 3rem;
+            margin: 2rem;
+            border-radius: 10px;
+        }
+
+        /* Carousel Slide Gambar di Beranda */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin-top: 1rem;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Tombol Navigasi Carousel */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: 50%;
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 76, 140, 0.9); /* Biru Tua dengan transparansi */
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            margin-left: 0.5rem;
+        }
+
+        .footer-link:hover {
+            color: #66b2ff;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header dan Navigasi -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.JPG" alt="Logo SMP N 3 BANYURESMI" class="logo"> <!-- Ganti dengan path logo Anda -->
+            <h1>SMP NEGERI 3 BANYURESMI</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://www.instagram.com/smpn3banyuresmi" target="_blank">Instagram</a></li>
+                <li><a href="#" onclick="showPage('home')">Beranda</a></li>
+                <li><a href="#" onclick="showPage('about')">Profil</a></li>
+                <li><a href="#" onclick="showPage('programs')">Program</a></li>
+                <li><a href="#" onclick="showPage('extracurriculars')">Ekstrakurikuler</a></li>
+                <li><a href="#" onclick="showPage('gallery')">Galeri</a></li>
+                <li><a href="#" onclick="showPage('motivation')">Motivasi</a></li>
+                <li><a href="#" onclick="showPage('notBullying')">Not Bullying</a></li>
+                <li><a href="#" onclick="showPage('contact')">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner" id="home">
+        <div>
+            <h2>"Pendidikan Adalah Senjata Paling Ampuh untuk Mengubah Dunia"</h2>
+            <p>Semangat Belajar di SMP N 3 BANYURESMI</p>
+        </div>
+    </section>
+
+    <!-- Konten Halaman Beranda -->
+    <section id="home" class="content active">
+        <h2>Selamat Datang di SMP N 3 BANYURESMI</h2>
+        <p>Di sini Anda akan menemukan informasi terbaru tentang sekolah kami dan kegiatan yang kami selenggarakan.</p>
+        
+        <!-- Carousel Gambar di Beranda -->
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="beranda1.JPG" alt="Gambar Kegiatan 1"> <!-- Ganti dengan path gambar Anda -->
+                <img src="beranda2.PNG" alt="Gambar Kegiatan 2"> <!-- Ganti dengan path gambar Anda -->
+                <img src="beranda3.JPG" alt="Gambar Kegiatan 3"> <!-- Ganti dengan path gambar Anda -->
+            </div>
+            <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="about" class="content">
+        <h2>Profil Sekolah</h2>
+        <p>SMP N 3 BANYURESMI adalah sekolah yang berdedikasi untuk mencetak generasi cerdas, berkarakter, dan kompeten.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 SMP N 3 BANYURESMI. Semua Hak Cipta Dilindungi. By: TeamFasya</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        let currentSlide = 0;
+
+        function moveSlide(direction) {
+            const slides = document.querySelector('.carousel-slide');
+            const totalSlides = slides.children.length;
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Auto slide setiap 3 detik
+        setInterval(() => moveSlide(1), 3000);
+    </script>
+</body>
+</html>
